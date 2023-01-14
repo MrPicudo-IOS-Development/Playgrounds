@@ -52,6 +52,15 @@ myTown.dig()
 // Mostramos el nuevo conteo de recursos
 print("We have \(myTown.resources["Wood"]!) tables of wood, \(myTown.resources["Gold"]!) oz of gold and \(myTown.resources["Food"]!) kg of food.")
 
+// Si creamos un objeto nuevo de la estructura Town() con la palabra reservada let, no podremos usar los métodos mutables.
+let chernobyl = Town()
+
+// Mostramos el nuevo conteo de recursos
+print("In chernobyl are \(chernobyl.resources["Wood"]!) tables of wood, \(chernobyl.resources["Gold"]!) oz of gold and \(chernobyl.resources["Food"]!) kg of food.")
+
+// Ahora tratamos de modificar los recursos de chernobyl con las funciones mutables:
+// chernobyl.cutWood() // El error dice "Cannot use muteting member on immutable value: "chernobyl" is a "let" constant
+
 // Ahora vamos a crear una estructura de la manera más parecida posible a una clase de Java.
 struct SeatIbiza {
     /* Atributos */

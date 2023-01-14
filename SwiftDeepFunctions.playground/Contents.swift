@@ -1,3 +1,4 @@
+// Función sencilla sin parámetros ni retorno
 func greeting() {
     // Si no vamos a usar para nada el valor de la variable iterativa (por ejemplo "i"), podemos poner un guión bajo _ en su lugar en el ciclo for.
     for _ in 1...4 {
@@ -12,16 +13,54 @@ func greeting() {
     }
     greeting2()
 }
-
+// Mandamos a llamar a la función
 greeting()
 
+// Función con parámetro interno
 func personalGreeting(name: String) {
     print("¡Hola \(name)!")
 }
-
+// Mandamos a llamar a la función con parámetro interno exclusivo.
 personalGreeting(name: "Miguel")
 personalGreeting(name: "Nelly")
 personalGreeting(name: "Lalo")
 personalGreeting(name: "Elias")
 personalGreeting(name: "Job")
 personalGreeting(name: "Eli")
+
+// Función con parámetros interno y externo
+func makeFriends(people name: String) {
+    print("¡Hola \(name)!, ¿te gusta la pizza?")
+}
+// Mandamos a llamar a la función con parámetros interno y externo
+makeFriends(people: "Eduardo")
+makeFriends(people: "Nadia")
+makeFriends(people: "Alejandro")
+
+// Función con parámetro externo "eliminado"
+func inviteFriend(_ name: String) {
+    print("\(name), ¿Quieres venir con nosotros a comer pizza?")
+}
+// Mandamos a llamar a la función con parámetro externo eliminado
+inviteFriend("Eduardo")
+inviteFriend("Nadia")
+inviteFriend("Alejandro")
+
+// Función con parámetros y retorno
+func dateNight(_ name: String) -> Bool {
+    print("\(name), ¿quieres salir conmigo al cine esta noche?")
+    if(name == "Nelly" || name == "Cristian") {
+        return true
+    }
+    else {
+        return false
+    }
+}
+// Mandamos a llamar a la función con parámetros y retorno, dentro de un if porque su retorno es un boolean.
+if(dateNight("Nelly")) {
+    print("Genial, ¡vamos a ver Interestellar!")
+}
+else {
+    print("Vale, ten un buen día.")
+}
+

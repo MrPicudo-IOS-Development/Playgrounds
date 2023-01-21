@@ -3,8 +3,15 @@
 class Enemy {
     /* Atributos o propiedades de la clase */
     
-    var health = 100
-    var attackStrength = 10
+    var health: Int
+    var attackStrength: Int
+    
+    /* Constructor */
+    
+    init(health: Int, attackStrength: Int) {
+        self.health = health
+        self.attackStrength = attackStrength
+    }
     
     /* Métodos */
 
@@ -16,4 +23,7 @@ class Enemy {
         print("Land a hit, does \(attackStrength) damage.")
     }
     
+    func takeDamage(hit: Int) {
+        self.health = self.health - hit
+    }
 }

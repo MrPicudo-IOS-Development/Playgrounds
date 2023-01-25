@@ -33,7 +33,7 @@ print(text)
 let text2: String = myOptional2 ?? "I am the default value 2"
 print(text2)
 
-// Ejemplo de Optional Chaining
+// Ejemplo 1 de Optional Chaining
 struct MyOptional {
     var property = 123
     func method() {
@@ -49,7 +49,8 @@ optionalStruct = nil
 let optionalStruct2: MyOptional?
 optionalStruct2 = MyOptional()
 
-print(optionalStruct?.property)
-print(optionalStruct2?.property)
+// Usamos el Nil Coalescing Operator para definir un valor por default en caso de que la estructura sea nula.
+print(optionalStruct?.property ?? 0)
+print(optionalStruct2?.property ?? 0)
 
 optionalStruct2?.method()

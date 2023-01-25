@@ -54,3 +54,27 @@ print(optionalStruct?.property ?? 0)
 print(optionalStruct2?.property ?? 0)
 
 optionalStruct2?.method()
+
+// Ejemplo 2 de Optional Chaining
+struct Monkey {
+    /* Atributos */
+    var age: Int? = nil
+    /* Métodos */
+    mutating func setAge(_ age: Int) {
+        self.age = age
+    }
+}
+
+var donkey: Monkey? = nil
+
+// Imprimimos la edad del objeto, y en caso de que el objeto sea nulo, imprimimos -1
+print(donkey?.age ?? -1)
+// Definimos un mensaje que sale en caso de que no se pueda acceder al método porque el objeto es nulo.
+donkey?.setAge(20) ?? print("Hola")
+
+// Inicializamos el objeto, para que ya no sea un objeto nulo, pero la variable age sigue siendo de tipo optional.
+donkey = Monkey()
+print("Edad de Donkey (1): ", donkey?.age ?? -1) // Entonces, si la variable también es nula, se manda el error. Revisa objeto y variable.
+donkey?.setAge(20) ?? print("Hola") // No hay ningún mensaje en consola aquí, porque si pudo acceder al método.
+print("Edad de Donkey (2): ", donkey?.age ?? -1)
+

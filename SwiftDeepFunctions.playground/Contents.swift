@@ -16,7 +16,7 @@ func greeting() {
 // Mandamos a llamar a la función
 greeting()
 
-// Función con parámetro interno
+// Función con parámetro único (funciona como interno y externo)
 func personalGreeting(name: String) {
     print("¡Hola \(name)!")
 }
@@ -64,3 +64,9 @@ else {
     print("Vale, ten un buen día.")
 }
 
+// Función que suma y resta dos números
+func operate(_ num1: Double, _ num2: Double) -> (Double, Double) {
+    return (num1 + num2, num1 - num2)
+}
+
+var results = operate(13.1, 17.7)

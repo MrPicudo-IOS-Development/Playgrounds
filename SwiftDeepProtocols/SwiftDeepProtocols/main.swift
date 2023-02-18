@@ -5,6 +5,13 @@ protocol CanFly {
     func fly()
 }
 
+// Creamos una extensión al protocolo para definir una implementación por default a sus métodos.
+extension CanFly {
+    func fly() {
+        print("The object takes off into the air")
+    }
+}
+
 // Creamos un 2do protocolo para mostrar la implementación de varios protocolos a una misma clase o estructura.
 protocol TransportPeople {
     func transport()
@@ -71,3 +78,15 @@ myPenguin.swim()
 // Y usamos la función flyingDemo de la estructura FlyingMuseum
 museum.flyingDemo(flyingObject: myEagle)
 museum.flyingDemo(flyingObject: myPlane)
+
+
+// Agregamos una clase nueva que adopte el protocolo CanFly con su versión predeterminada del método fly()
+class LittleBird: Bird, CanFly {
+    func pretty() {
+        print("No puele")
+    }
+}
+
+// Creamos el objeto de esta nueva clase y usamos el método que tiene por default gracias a la extensión del protocolo.
+let Swifty = LittleBird()
+Swifty.fly()
